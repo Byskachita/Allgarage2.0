@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+
+/***********************************GENERALES*/
+body * {
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+
+h1{
+    font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+}
+
+a:hover {
+    color:#FDC309 !important;
+}
+
+a:active {
+    color:#ccc !important;
+}
+
+/*************************************NAVEGACIÓN*/
+
+.container_nav {
+    background-color: black;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 80%;
+    margin: auto; 
+}
+
+.collapse ul {
+    background-color: #000000;
+}
+
+.navbar img {
+    width: auto;
+    height: 70px;
+}
+
+.navbar .navbar-brand {
+    width: 40px;
+    height: auto;
+}
+
+.nav-item .nav-link active {
+    color: #FDC309;
+}
+
+.B-top-item {
+    width: 100%;
+    height: 40px;
+    background-color: #FDC309;
+    list-style: none;
+}
+
+.B-top-item img{
+    width: 15px;
+    height: auto;
+}
+
+.B-top-item a{
+    color: #000000;
+    font-size: small;
+}
+
+/*******************************************WHATSAP*/
+
+#whatsapp a{
+    text-decoration: none;
+  }
+  #whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right:20px;
+  }
+  svg {
+      width: 80px;
+      display: inline-block;
+    vertical-align: middle;
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,.4));
+  }
+  circle {
+    fill: #25d366;
+  }
+  path {
+      fill:  #fff;
+  }
+  #whatsapp a {padding: 20px 0;}
+  #whatsapp a::before {
+      content: 'Te asesoramos';
+      display: inline-block;
+      vertical-align: middle;
+      padding: 5px 10px;
+      margin-right: 10px;
+      color: rgba(0, 0, 0, .8);
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      filter: drop-shadow(0 1px 4px rgba(0,0,0,.4));
+      transition: .3s ease;
+      opacity: 0;
+  }
+  #whatsapp:hover a::before {opacity: 1;}
+
+/*******************************************FOOTER*/
+
+footer {
+    background-color: #000000;
+    width: 100%;
+    height: auto;
+}
+
+footer .icon_section img {
+    width: 30px;
+    height: auto;
+}
+
+footer .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0;
+}
+
+footer .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .grupo-1 .box figure img {
+    width: 250px;
+}
+
+footer .box h4 {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+footer .box p {
+    margin-bottom: 10px;
+}
+
+footer .grupo-1 .box .icon_section {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+footer .grupo-1 .box .icon_section img {
+    margin-right: 10px;
+}
+
+footer .grupo-1 .box .text_container h5 {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+footer .grupo-2 {
+    background-color: #FDC309;
+    padding: 15px 10px;
+    text-align: center;
+    color: #000000;
+}
+
+footer .bi-facebook {
+    color: #ffffff;
+    font-size: x-large;
+}
+
+footer .bi-instagram {
+    color: #ffffff;
+    font-size: x-large;
+}
+
+footer .bi-whatsapp {
+    color: #ffffff;
+    font-size: x-large;
+}
+
+/**/
+/**/
+/*********************************HOME***************************************************/
+/**/
+/**/
+
+/********************************HERO SECTION*/
+
+.header {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Launch.jpg);
+    opacity: 1;
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#headerTOP {
+    display: flex;
+    align-items: center;
+}
+
+.InfoTOP {
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    margin: 10px auto; 
+}
+
+.txt_head h1 {
+    font-size: 80px;
+}
+
+.txt_head h2 {
+    font-size: 60px;
+    color: #FDC309;
+}
+
+.btn btn-outline-light {
+    font-size: 150px;
+}
+
+.InfoCARD {
+    position: absolute;
+    top: 550px;
+    text-align: center;
+}
+
+/*****************************************DESTACADOS*/
+
+#Destacados {
+    width: 100%;
+}
+
+.container-fluid {
+    background-color: #000000;
+}
+
+/*****************************************CARDS*/
+
+.card img {
+    width: 100%;
+    transition: all 300ms;
+}
+
+.card img:hover {
+    transform: scale(1.15);
+}
+
+.card-body {
+    text-align: center;
+}
+
+
+/*****************************************SECTION SMOTH*/
+.smoth {
+    background-color: #950C00;
+}
+
+.smoth .card {
+    border-style: none;
+    background-color: #FDC309;
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+
+.smoth img {
+    width: 400px;
+    height: auto;
+}
+
+/******************************************FORM*/
+
+input .placeholder {
+    color: rgb(223, 221, 221);
+}
+
+.warnings {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: red;
+    padding-top: 20px;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++CAROUSEL*/
+  
+.carousel img {
+    width: 200px;
+    height: auto;
+    align-items: center;
+}
+
+/**/
+/**/
+/******************************************************SERVICES***************************************************/
+/**/
+/**/
+
+/**********************************************************HERO SECTION******************************************/
+
+.headerSERV {
+    width: 100%;
+    height: 900px;
+    background-color: #FDC309;
+}
+
+#ServiciosTOP {
+    width: 80%;
+    height: auto;
+}
+
+.Titulo_container {
+    position: absolute;
+    text-align: center;
+    top: 180px;
+    margin: 10px auto; 
+}
+
+.titulo h1{
+    font-size: 80px;
+}
+
+.titulo h2{
+    font-size: 60px;
+}
+
+.card_services {
+    position: absolute;
+    top: 300px;
+    display: flex;
+}
+
+.card-img-top {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+/********************************************************DESTACADOS***********************************/
+
+.bento-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 200px);
+}
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-card:hover img {
+    opacity: 1;
+}
+
+.service-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px; 
+    }
+
+.service-info-nuevo {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    color: greenyellow;
+    font-size: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+}    
+
+/*Destacados*/
+.service-card:nth-child(1), 
+.service-card:nth-child(4),
+.service-card:nth-child(5),
+.service-card:nth-child(8){
+    grid-column: span 2;
+}
+
+/**********************************************************AGENDAMIENTO****************************************************/
+
+#agendamiento {
+    width: 100%;
+    height: 850px;
+    background-color: #950C00;
+}
+
+/**/
+/**/
+/*********************************************************CONTACTO*****************************************************/
+/**/
+/**/
+
+/********************************HERO SECTION*/
+
+.headerCONT {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Balanceo1.jpg);
+    opacity: 1;
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#headerTOP {
+    display: flex;
+    align-items: center;
+}
+
+.InfoTOP_Cont {
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    margin: 10px auto; 
+}
+
+.txt_head h1 {
+    font-size: 80px;
+}
+
+.txt_head h2 {
+    font-size: 60px;
+}
+
+.InfoCARD_Cont {
+    position: absolute;
+    top: 550px;
+    text-align: center;
+}
+
+/**********************************************************UBICACION******************************************/
+
+#ubicacion {
+    width: 100%;
+    height: 800px;
+}
+
+#form_datos {
+    background-color: #FDC309;
+    padding: 15px 35px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+
+

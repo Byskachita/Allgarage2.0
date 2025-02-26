@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@media (max-width: 1024px){
+
+
+    /*********************************************************/
+    /**********************PANTALLA*****************************/
+
+    /**/
+    /**/
+    /*********************************************GENERALES********************************/
+    /**/
+    /**/
+
+        /*******************************************FOOTER*/
+
+footer {
+    background-color: #000000;
+    width: 100%;
+    height: auto;
+}
+
+footer .icon_section img {
+    width: 30px;
+    height: auto;
+}
+
+footer .grupo-1 {
+    width: 90%;
+    max-width: 1024px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    padding: 35px 0;
+}
+
+footer .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .grupo-1 .box figure img {
+    width: 250px;
+}
+
+footer .grupo-1 .box h4 {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+footer .grupo-1 .box p {
+    margin-bottom: 10px;
+}
+
+footer .grupo-1 .box .icon_section {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+footer .grupo-1 .box .icon_section img {
+    margin-right: 10px;
+}
+
+footer .grupo-1 .box .icon_rrss {
+    align-items: center;
+}
+
+footer .grupo-2 {
+    background-color: #FDC309;
+    padding: 15px 10px;
+    text-align: center;
+    color: #000000;
+}
+
+footer .bi-facebook {
+    color: #ffffff;
+    font-size: x-large;
+}
+
+footer .bi-instagram {
+    color: #ffffff;
+    font-size: x-large;
+}
+
+footer .bi-whatsapp {
+    color: #ffffff;
+    font-size: x-large;
+}
+
+    main {
+        width: 100%;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    /**/
+    /**/
+    /*********************************************************HOME**************************************/
+    /**/
+    /**/
+
+    /*********************HERO SECTION************************/
+
+    .header {
+        background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Balanceo1.jpg);
+        opacity: 1;
+        width: 100%;
+        height: 1000px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    #headerTOP {
+        display: flex;
+        align-items: center;
+    }
+
+    .InfoTOP {
+        position: absolute;
+        text-align: center;
+        top: 150px;
+        margin: 10px auto;
+    }
+    
+    .txt_head h1 {
+        font-size: 60px;
+    }
+    
+    .txt_head h2 {
+        font-size: 40px;
+        color: #FDC309;
+    }
+    
+    .btn btn-outline-light {
+        font-size: 100px;
+    }
+    
+    .InfoCARD {
+        position: absolute;
+        top: 800px;
+        text-align: center;
+    }
+
+    /**/
+    /**/
+    /*********************************************************SERVICIOS**************************************/
+    /**/
+    /**/
+
+    /**********************************************************HERO SECTION******************************************/
+
+.headerSERV {
+    width: 100%;
+    height: 1000px;
+    background-color: #FDC309;
+}
+
+#ServiciosTOP {
+    width: 80%;
+    height: auto;
+}
+
+.Titulo_container {
+    position: absolute;
+    text-align: center;
+    top: 150px;
+    margin: 10px auto; 
+}
+
+.titulo h1{
+    font-size: 80px;
+}
+
+.titulo h2{
+    font-size: 60px;
+}
+
+.card_services {
+    position: absolute;
+    top: 300px;
+    display: flex;
+}
+
+.card-img-top {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+}
+
+/**/
+/**/
+/*********************************************************CONTACTO*****************************************************/
+/**/
+/**/
+
+/********************************HERO SECTION*/
+
+.headerCONT {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Balanceo1.jpg);
+    opacity: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#headerTOP_Cont {
+    display: flex;
+    align-items: center;
+}
+
+.InfoTOP_Cont {
+    position: absolute;
+    text-align: center;
+    top: 180px;
+    margin: 10px auto; 
+}
+
+.txt_head h1 {
+    font-size: 80px;
+}
+
+.txt_head h2 {
+    font-size: 60px;
+}
+
+.InfoCARD_Cont {
+    position: absolute;
+    top: 100px;
+    text-align: center;
+}
+
+}
