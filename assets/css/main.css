@@ -440,10 +440,9 @@ input .placeholder {
 
 .headerCONT {
     width: 100%;
-    height: auto;
     background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Balanceo1.jpg);
     opacity: 1;
-    height: 900px;
+    height: 800px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -462,18 +461,23 @@ input .placeholder {
     margin: 10px auto; 
 }
 
-.txt_head h1 {
+.txt_head_Cont h1 {
     font-size: 80px;
 }
 
-.txt_head h2 {
+.txt_head_Cont h2 {
     font-size: 60px;
+    color: #FDC309;
 }
 
 .InfoCARD_Cont {
     position: absolute;
-    top: 550px;
+    top: 500px;
     text-align: center;
+}
+
+.card-body-icon img {
+    width: 100px;
 }
 
 /**********************************************************UBICACION******************************************/
