@@ -462,12 +462,13 @@ input .placeholder {
     margin: 10px auto; 
 }
 
-.txt_head h1 {
+.txt_head_Cont h1 {
     font-size: 80px;
 }
 
-.txt_head h2 {
+.txt_head_Cont h2 {
     font-size: 60px;
+    color: #FDC309;
 }
 
 .InfoCARD_Cont {
