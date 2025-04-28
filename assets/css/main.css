@@ -25,11 +25,11 @@ h3 {
 }
 
 a:hover {
-    color:#FDC309 !important;
+    color:#ccc !important;
 }
 
-a:active {
-    color:#ccc !important;
+.B-top-item li{
+    color:#950C00 !important;
 }
 
 /*************************************NAVEGACIÓN*/
@@ -259,21 +259,85 @@ footer .bi-whatsapp {
     background-color: #000000;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 /*****************************************CARDS*/
 
-.card img {
+.card_flip {
+    position: relative;
     width: 100%;
-    transition: all 300ms;
+    height: 500px; 
+    margin: 0;
+    padding: 0 10px;
 }
 
-.card img:hover {
-    transform: scale(1.15);
+.card_flip div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: 1s;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.card-body {
+.card_flip .front {
+    transform: perspective(500px) rotateY(0deg);
+}
+
+.card_flip .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card_flip .front h5{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
     text-align: center;
 }
 
+.card_flip:hover .front {
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.card_flip .back {
+    background: #FDC309;
+    transform: perspective(500px) rotateY(180deg);
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.card_flip .back p {
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    color: #000000;
+}
+
+.card_flip .back .link_back {
+    border-top: solid 1px #000000;
+    padding-top: 10px;
+    height: auto;
+    line-height: normal;
+}
+
+.card_flip:hover .back {
+    transform: perspective(500px) rotateY(360deg);
+}
 
 /*****************************************SECTION SMOTH*/
 .smoth {
@@ -294,6 +358,19 @@ footer .bi-whatsapp {
 }
 
 /******************************************FORM*/
+.btn btn-primary {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FDC309;
+    color: black;
+}
 
 input .placeholder {
     color: rgb(223, 221, 221);
@@ -494,5 +571,71 @@ input .placeholder {
     align-items: center;
 }
 
+/**/
+/**/
+/**************************************************SERVICIO-DPF*****************************************************/
+/**/
+/**/
 
+/********************************HERO SECTION*/
+
+.header_DPF {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Limpieza-dpf-en-allgarage.png);
+    opacity: 1;
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#headerTOP_DPF {
+    display: flex;
+    align-items: center;
+}
+
+.InfoTOP_DPF {
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    margin: 10px auto; 
+}
+
+.txt_head_DPF h1 {
+    font-size: 80px;
+    text-shadow: #000000 0px 0px 10px;
+}
+
+.txt_head_DPF h2 {
+    font-size: 60px;
+    color: #ccc;
+    text-shadow: #000000 0px 0px 10px;
+}
+
+.btn_DPF {
+    background-color: #FDC309 !important;
+    color: #000000 !important;
+    font-size: 1.5rem !important;
+    border: none !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn_DPF:hover {
+    background-color: #e2b007 !important;
+    color: #000000 !important;
+}
+
+/********************************DESCRIPTION*/
+
+.img_DPF {
+    width: 100%;
+    max-height: 550px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
 
