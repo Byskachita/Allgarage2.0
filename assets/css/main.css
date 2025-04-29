@@ -725,3 +725,71 @@ input .placeholder {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     object-fit: cover;
 }
+
+/**/
+/**/
+/**************************************************ALINEACION*****************************************************/
+/**/
+/**/
+
+/********************************HERO SECTION*/
+
+.header_Alineacion {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_Alineacion.JPG);
+    opacity: 1;
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#headerTOP_Alineacion {
+    display: flex;
+    align-items: center;
+}
+
+.InfoTOP_Alineacion {
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    margin: 10px auto; 
+}
+
+.txt_head_Alineacion h1 {
+    font-size: 80px;
+    text-shadow: #000000 0px 0px 10px;
+}
+
+.txt_head_Alineacion h2 {
+    font-size: 60px;
+    color: #ccc;
+    text-shadow: #000000 0px 0px 10px;
+}
+
+.btn_Alineacion {
+    background-color: #FDC309 !important;
+    color: #000000 !important;
+    font-size: 1.5rem !important;
+    border: none !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn_Alineacion:hover {
+    background-color: #e2b007 !important;
+    color: #000000 !important;
+}
+
+/********************************DESCRIPTION*/
+
+.img_Alineacion {
+    width: 100%;
+    max-height: 550px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
