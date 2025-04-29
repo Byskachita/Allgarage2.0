@@ -32,6 +32,10 @@ a:hover {
     color:#950C00 !important;
 }
 
+.text-rojo-allgarage {
+    color: #950C00 !important;
+}
+
 /*************************************NAVEGACIÓN*/
 
 .container_nav {
@@ -77,6 +81,10 @@ a:hover {
 .B-top-item a{
     color: #000000;
     font-size: small;
+}
+
+.B-top-item a:hover{
+    color: #950C00 !important;
 }
 
 /*******************************************WHATSAP*/
@@ -346,6 +354,14 @@ ul {
     transform: perspective(500px) rotateY(360deg);
 }
 
+.card_flip a:hover {
+    color: #950C00 !important;
+}
+
+.nuestros_servicios a:hover {
+    color: #FDC309 !important;
+}
+
 /*****************************************SECTION SMOTH*/
 .smoth {
     background-color: #950C00;
@@ -524,7 +540,7 @@ input .placeholder {
 
 .headerCONT {
     width: 100%;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Balanceo1.jpg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Launch_contacto.jpg);
     opacity: 1;
     height: 800px;
     background-size: cover;
