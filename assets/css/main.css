@@ -314,25 +314,32 @@ ul {
     background: #FDC309;
     transform: perspective(500px) rotateY(180deg);
     padding: 15px;
-    color: #fff;
+    color: #000000;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: center;
+    position: relative;
 }
 
 .card_flip .back p {
     letter-spacing: 1px;
     margin-bottom: 10px;
-    flex-grow: 1;
     color: #000000;
 }
 
 .card_flip .back .link_back {
-    border-top: solid 1px #000000;
+    margin-top: 400px;
     padding-top: 10px;
-    height: auto;
-    line-height: normal;
+    text-align: center;
+}
+
+.card_flip .back .link_back a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .card_flip:hover .back {
@@ -582,7 +589,7 @@ input .placeholder {
 .header_DPF {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Limpieza-dpf-en-allgarage.png);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Limpieza-dpf_Services-dpf.jpg);
     opacity: 1;
     height: 900px;
     background-size: cover;
