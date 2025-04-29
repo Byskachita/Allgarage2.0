@@ -217,7 +217,7 @@ footer .bi-whatsapp {
 .header {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Launch.jpg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Launch_Home.jpg);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -540,7 +540,7 @@ input .placeholder {
 
 .headerCONT {
     width: 100%;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Launch_contacto.jpg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.50)), url(../img/Header_Contacto.JPG);
     opacity: 1;
     height: 800px;
     background-size: cover;
