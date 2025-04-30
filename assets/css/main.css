@@ -25,7 +25,11 @@ h3 {
 }
 
 a:hover {
-    color:#ccc !important;
+    color: #ccc !important;
+}
+
+.InfoTOP a:hover {
+    color:#950C00 !important;
 }
 
 .text-rojo-allgarage {
@@ -272,7 +276,7 @@ ul {
 
 .card_flip {
     position: relative;
-    width: 100%;
+    width: 80%;
     height: 500px; 
     margin: 0;
     padding: 0 10px;
@@ -299,7 +303,7 @@ ul {
     object-fit: cover;
 }
 
-.card_flip .front h5{
+.card_flip .front p{
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -584,8 +588,9 @@ input .placeholder {
 }
 
 #form_datos {
-    background-color: #FDC309;
-    padding: 15px 35px;
+    background-color: rgb(253, 195, 9, 0.2);
+    box-shadow: #000000 0px 3px 3px;
+    padding: 30px 40px;
     border-radius: 5px;
     align-items: center;
 }
@@ -787,7 +792,143 @@ input .placeholder {
 
 .img_Alineacion {
     width: 100%;
-    max-height: 550px;
+    max-height: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+/**/
+/**/
+/**************************************************BALANCEO*****************************************************/
+/**/
+/**/
+
+/********************************HERO SECTION*/
+
+.header_Balanceo {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_Balanceo.JPG);
+    opacity: 1;
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#headerTOP_Balanceo {
+    display: flex;
+    align-items: center;
+}
+
+.InfoTOP_Balanceo {
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    margin: 10px auto; 
+}
+
+.txt_head_Balanceo h1 {
+    font-size: 80px;
+    text-shadow: #000000 0px 0px 10px;
+}
+
+.txt_head_Balanceo h2 {
+    font-size: 60px;
+    color: #ccc;
+    text-shadow: #000000 0px 0px 10px;
+}
+
+.btn_Balanceo {
+    background-color: #FDC309 !important;
+    color: #000000 !important;
+    font-size: 1.5rem !important;
+    border: none !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn_Balanceo:hover {
+    background-color: #e2b007 !important;
+    color: #000000 !important;
+}
+
+/********************************DESCRIPTION*/
+
+.img_Balanceo {
+    width: 100%;
+    max-height: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+/**/
+/**/
+/**************************************************ESCANER*****************************************************/
+/**/
+/**/
+
+/********************************HERO SECTION*/
+
+.header_Escaner {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_Escaner.jpeg);
+    opacity: 1;
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#headerTOP_Escaner {
+    display: flex;
+    align-items: center;
+}
+
+.InfoTOP_Escaner {
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    margin: 10px auto; 
+}
+
+.txt_head_Escaner h1 {
+    font-size: 80px;
+    text-shadow: #000000 0px 0px 10px;
+}
+
+.txt_head_Escaner h2 {
+    font-size: 60px;
+    color: #ccc;
+    text-shadow: #000000 0px 0px 10px;
+}
+
+.btn_Escaner {
+    background-color: #FDC309 !important;
+    color: #000000 !important;
+    font-size: 1.5rem !important;
+    border: none !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn_Escaner:hover {
+    background-color: #e2b007 !important;
+    color: #000000 !important;
+}
+
+/********************************DESCRIPTION*/
+
+.img_Escaner {
+    width: 100%;
+    max-height: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);

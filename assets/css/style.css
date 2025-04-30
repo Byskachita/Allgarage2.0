@@ -1,6 +1,7 @@
 /*****PRUEBA DE INDEX.PHP**********/
 body {
-    background-color: #FDC309;
+    background-color: #ccc;
+    box-shadow: black 0px 0px 10px;
     font-size: 1.2em;
     font-weight: bold;
 }
