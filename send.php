@@ -36,7 +36,7 @@ if ($nombre == "" || $apellido == "" || $email == "" || $mensaje == "") {
         $mail->Host = 'smtp.hostinger.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'demo@allgarage.cl';
-        $mail->Password = 'Allgarage_Demo2025';
+        $mail->Password = '';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
