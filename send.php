@@ -13,6 +13,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 $mail = new PHPMailer(true);
+$mail->SMTPDebug = 2;
+$mail->Debugoutput = 'html'; // Cambia a 'html' para ver errores en el navegador
 
 $nombre = $_POST['name'];
 $apellido = $_POST['apellido'];
@@ -31,16 +33,17 @@ if ($nombre == "" || $apellido == "" || $email == "" || $mensaje == "") {
     try {
         // Configuración, cambiar correo y credenciales.
         $mail->isSMTP();
-        $mail->Host = 'mail.allgarage.cl';
+        $mail->Host = 'smtp.hostinger.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'demo@allgarage.cl';
-        $mail->Password = 'Qwerty.11';
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
+        $mail->Password = 'Allgarage_Demo2025';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
 
 
         $to = "contacto@allgarage.cl"; // el correo donde llegará todo
-        $mail->setFrom($email);
+        $mail->setFrom('demo@allgarage.cl', 'Formulario Web Allgarage');
+        $mail->addReplyTo($email, $nombre . ' ' . $apellido); // Responder a este correo
         $mail->addAddress($to);
         $mail->Subject = 'Nuevo mensaje desde tu web';
 
