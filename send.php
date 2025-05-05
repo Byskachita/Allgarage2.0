@@ -46,7 +46,7 @@ if ($nombre == "" || $apellido == "" || $email == "" || $mensaje == "") {
         $mail->addReplyTo($email, $nombre . ' ' . $apellido); // Responder a este correo
         $mail->addAddress($to);
         $mail->Subject = 'Nuevo mensaje desde tu web';
-
+        
         $mail->isHTML(true);
         $mail->Body = '<strong>' . $nombre . ' ' . $apellido . '</strong> te ha contactado desde tu web y ha enviado el siguiente mensaje: <br><p>' . $mensaje . '</p>';
 
