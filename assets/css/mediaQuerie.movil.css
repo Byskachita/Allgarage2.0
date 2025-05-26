@@ -19,10 +19,10 @@
     /*********************HERO SECTION************************/
     
     .header {
-        background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Launch.jpg); /*Para lograr que la imágen este opaca*/
+        background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Launch_Home.jpg); /*Para lograr que la imágen este opaca*/
         opacity: 1;
         width: 100%;
-        height: 1000px;
+        height: 1100px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -119,7 +119,7 @@
     /********************************HERO SECTION*/
 
     .headerCONT {
-        background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Balanceo1.jpg);
+        background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../img/Header_Contacto.JPG);
         opacity: 1;
         width: 100%;
         height: 1350px;

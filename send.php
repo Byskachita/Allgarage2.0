@@ -13,23 +13,21 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 $mail = new PHPMailer(true);
-$mail->SMTPDebug = 2;
-$mail->Debugoutput = 'html'; // Cambia a 'html' para ver errores en el navegador
+$mail->CharSet = 'UTF-8';
 
-$nombre = $_POST['name'];
-$apellido = $_POST['apellido'];
-$email = $_POST['correo'];
-$mensaje = $_POST['mensaje'];
+$nombre = trim($_POST['name']);
+$apellido = trim($_POST['apellido']);
+$email = trim($_POST['correo']);
+$marca = trim($_POST['marca']);
+$modelo = trim($_POST['modelo']);
+$year = trim($_POST['year']);
+$mensaje = trim($_POST['mensaje']);
 
 if ($nombre == "" || $apellido == "" || $email == "" || $mensaje == "") {
     //echo '<div class="alert alert-danger">Todos los campos son requeridos para el envio</div>';    
-    echo '<script>alert("Todos los campos son requeridos para el envio");</script>';
-    header("Location: contacto.html");
+    echo 'Error: Todos los campos requeridos deben ser completados';
     exit;
-} else {
-    $maxAttempts = 3;  
-    $currentAttempt = 0;
-
+} 
     try {
         // Configuración, cambiar correo y credenciales.
         $mail->isSMTP();
@@ -45,29 +43,24 @@ if ($nombre == "" || $apellido == "" || $email == "" || $mensaje == "") {
         $mail->setFrom('demo@allgarage.cl', 'Formulario Web Allgarage');
         $mail->addReplyTo($email, $nombre . ' ' . $apellido); // Responder a este correo
         $mail->addAddress($to);
+        $mail->addCC('denisse.rossel@todosuministros.cl'); // Copia a la dirección del remitente
         $mail->Subject = 'Nuevo mensaje desde tu web';
-        
+       
         $mail->isHTML(true);
-        $mail->Body = '<strong>' . $nombre . ' ' . $apellido . '</strong> te ha contactado desde tu web y ha enviado el siguiente mensaje: <br><p>' . $mensaje . '</p>';
+        $mail->Subject = 'Nuevo mensaje desde Allgarage.cl';
+        $mail->Body = "
+            <strong> $nombre $apellido </strong> te ha contactado desde tu web y ha enviado la siguiente información: <br> 
+            <p> <strong> Marca: </strong> $marca <br> 
+            <strong> Modelo: </strong> $modelo <br> 
+            <strong> Año: </strong> $year <br> 
+            <strong> Mensaje: </strong> $mensaje </p> ";
 
         // Envío del correo electrónico
         $mail->send();
 
-
-        header("Location: index.html");
-        exit;
+        echo "Formulario enviado correctamente";
     } catch (Exception $e) {
-        $currentAttempt++;
-
-        if ($currentAttempt <= $maxAttempts) {
-            // Registrar error y reintentar envío con retraso
-            echo "Error al enviar correo (Intento: $currentAttempt): {$e->getMessage()}";
-            sleep(5); 
-        } else {
-            // Limite de intentos excedido
-            echo "Error al enviar correo: Limite de intentos excedido ($maxAttempts).";
-        }
+        echo "Error al enviar el formualrio: " . $mail->ErrorInfo;
     }
-}
 ?>
 
