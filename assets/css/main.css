@@ -265,6 +265,30 @@ footer .bi-whatsapp {
     text-align: center;
 }
 
+/********************************BANNER DE SERVICIOS************/
+
+.container_conf {
+  background-color: #ffffff; /* o el color de fondo que uses */
+  border-radius: 8px; /* opcional, para bordes suaves */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra inferior suave */
+  padding: 2rem; /* opcional para contenido interno */
+}
+
+.icono-servicio {
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+a:hover .icono-servicio {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+a:hover p {
+  color: #C00000; /* Rojo AllGarage o un color que combine con tu marca */
+}
+
 /*****************************************DESTACADOS*/
 
 #Destacados {
