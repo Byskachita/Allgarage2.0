@@ -431,6 +431,11 @@ a:hover p {
     font-weight: 500;
 }
 
+.content-bottom a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Contenido oculto por defecto en Desktop */
 .content-center {
     opacity: 0;
