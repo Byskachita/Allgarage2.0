@@ -44,6 +44,7 @@ if ($nombre == "" || $apellido == "" || $email == "" || $mensaje == "") {
         $mail->addReplyTo($email, $nombre . ' ' . $apellido); // Responder a este correo
         $mail->addAddress($to);
         $mail->addCC('denisse.rossel@todosuministros.cl'); // Copia a la dirección del remitente
+        $mail->addCC('efigueroa@allgarage.cl'); // Copia a la dirección del remitente
         $mail->Subject = 'Nuevo mensaje desde tu web';
        
         $mail->isHTML(true);

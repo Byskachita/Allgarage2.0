@@ -14,7 +14,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-NKWW4ZCL');</script>
   <!-- End Google Tag Manager -->
-    <link href="assets/css/bootstrap.css">
+
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -38,26 +38,102 @@
 </script>
 
 <style>
-  body {
-    margin: 0;
-    font-family: 'oswald', sans-serif;
-  }
-  header {
-    background: #000000;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-  .btn {
-    background: #fdc309;
-    color: #000000;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-  }
-</style>
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            padding-top: 80px; /* Para que el contenido no quede debajo del navbar fijo */
+        }
+        
+        /* 1. Estilos base del Navbar */
+        header {
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container_nav.fixed-top {
+            /* FIX 1: Damos un z-index moderado al navbar */
+            z-index: 100;
+            background-color: #000000; /* Aseguramos que el navbar tenga fondo para cubrir lo de abajo */
+        }
+
+        /* 2. Estilos del Pop-up (SOLUCIÓN CRÍTICA DE Z-INDEX) */
+        .popup-promo {
+            /* Por defecto oculto, se muestra con JS */
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            /* FIX 2: Z-INDEX MUY ALTO para que esté por encima del navbar (100) */
+            z-index: 1000; 
+            overflow: auto; /* Para que se pueda hacer scroll si el contenido es largo */
+            padding-top: 40px;
+        }
+
+        .popup-content {
+            background-image: url('assets/img/Fondo_Navideño_PopUp.png');
+            background-color: #000000;
+            background-repeat: no-repeat;
+            background-position: cover;
+            display: block;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 450px;
+            height: 840px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(253, 236, 0, 0.5);
+            position: relative; /* Necesario para posicionar la 'X' de forma absoluta */
+        }
+
+        .close-btn {
+            color: #fff;
+            font-size: 50px;
+            font-weight: normal;
+            position: absolute; 
+            top: -50px; /* Distancia desde la parte superior del popup-content */
+            right: -40px; /* Distancia desde el borde derecho del popup-content */
+            cursor: pointer;
+            z-index: 1001; /* Opcional: Para asegurar que la 'X' esté sobre cualquier otro elemento del contenido */
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #ff0000;
+            text-decoration: none;
+        }
+        
+        /* Estilos de botones y otros elementos */
+        .btn-popUp {
+            background: #fdc309;
+            color: #000000;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-popUp:hover {
+            background: #e6b208;
+            color: #ffffff;
+        }
+        .navbar-brand img {
+            height: 40px; /* Ajusta el tamaño del logo */
+        }
+        .navbar {
+            padding: 0 1rem;
+        }
+    </style>
+
   </head>
 
 <body>
@@ -65,6 +141,36 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKWW4ZCL"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+<!----------------------------------------------------POPUP PROMO-->  
+
+ <!--div id="popup-promo" class="popup-promo" style="display: block;">
+        <div class="popup-content">
+            <BOTÓN DE CIERRE: Ahora posicionado absolutamente y con alto Z-INDEX>
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <Uso de placehold.co como sustituto temporal para la imagen>
+            <img src="assets/img/Logo_Navideño.png" alt="Logo AllGarage" style="max-width: 200px; margin-top: 20px;">
+            <h1 class="text-white">PROMO NAVIDEÑA 🎄</h1>
+            <h2>Servicios hasta 30% Off</h2>
+            <ol class="text-white">
+              <p>Lavado DPF con máquina 30% Off</p>
+              <p>Reprogramación ECU 25% Off</p>
+            </ol>
+            <p class="text-white-50">Agenda tu visita aquí.</p>
+            
+            <div class="popup-form">
+                <input type="text" name="name_popup" placeholder="Tu nombre" required>
+                <input type="email" name="correo_popup" placeholder="Tu email" required>
+                <input type="text" name="marca_popup" placeholder="Marca del vehículo" required>
+                <input type="text" name="servicio" placeholder="servicio requerido">
+                <a href="https://api.whatsapp.com/send?phone=56965808594&text=Hola,%20quiero%20un%20servicio%20Navideño." rel="noopener" target="_blank" class="btn-popUp btn w-100" onclick="enviarwhatsAppSinForm(event)">AGENDAR</a>
+            </div>
+
+            <div>
+                <p class="text-white pt-lg-3 pt-sm-0"><small> **Agenda con descuentos disponibles hasta el 31 de Diciembre 2025</small></p>
+            </div>
+        </div>
+    </div--!>
 
 <!----------------------------------------------------NAVBAR-->
 <div class="container_nav fixed-top">
@@ -98,8 +204,8 @@
 
     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
 
-          <a class="navbar-brand" href="/">
-          <img src="assets/img/Allgarage-web1.png" alt="logo AllGarage">
+          <a class="navbar-brand" href="index">
+          <img src="assets/img/Allgarage-logo.png" alt="logo AllGarage" style="height: 80px; margin: 10px;">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -111,13 +217,33 @@
                 <a class="nav-link text-white" aria-current="page" href="index">Home</a>
               </li>
 
-              <li class="nav-item"> 
-                <a class="nav-link text-white" aria-current="page" href="servicios">Servicios</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Servicios
+                </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="pages/servicio-dpf">DPF</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="pages/reprogramacion-ecu">Reprogramación ECU</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="pages/alineacion">Alineación 3D</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="pages/balanceo">Balanceo</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="pages/escaner">Escáner Profesional</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="pages/mantencion">Mantención preventiva y correctiva</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="pages/vulcanizacion">Vulcanización</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="pages/aire-acondicionado">Aire Acondicionado</a></li>
+                  </ul>
               </li>
 
               <li class="nav-item">
                 <a class="nav-link text-white" aria-current="page" href="contacto">Contáctanos</a>
-              </li>
+              </li>  
+
             </ul>
           </div>
     </nav>
@@ -223,11 +349,12 @@
   </div>
 </div>
 
+
 <!--------------------------------------------------------------SECTION ONE-->
 
-<section class="nosotros pt-5">
+<section class="nosotros my-5">
 
-  <div class="container">
+  <div class="container my-5">
     <h3 class="text-center display-6 m-5 text-uppercase">Taller Mecánico Automotriz Allgarage</h3>
     <p class="text-center">Nuestro equipo de profesionales está comprometido a brindar un servicio excepcional, asegurando que su automóvil esté en óptimas condiciones. <br> Somos un taller integral, pero nos especializamos en vehiculos franceses</p>
   </div>
@@ -244,31 +371,16 @@
 
 
 <!----------------------------------------------------------------DESTACADOS-->
-    <div id="Destacados my-5">
+    <!--div id="Destacados my-5">
 
     <div class="container-fluid p-4">
         <h3 class="text-center display-6 m-5 text-uppercase text-white">Servicios Destacados</h3>
         <div class="row gx-0 gy-4 my-5">
-        
-          <!--div class="col-lg-4 col-md-6 d-flex justify-content-center px-2">
-            <div class="card_flip">
-              <div class="front">
-                <img src="assets/img/Servicio-DPF_home.jpg" alt="Imágen de un dpf">
-                <h5>Servicio DPF</h5>
-              </div>
-              <div class="back">
-                <p>Si tu vehículo diésel pierde potencia o muestra luces de advertencia, es probable que el filtro DPF esté obstruido. En AllGarage realizamos una limpieza completa del filtro con tecnología avanzada, eliminando la totalidad de las partículas de hollín del filtro y dándole una nueva vida útil.</p>
-                <div class="link_back">
-                  <a href="pages/servicio-dpf">Más información</a>
-                </div>
-              </div>
-            </div>
-          </div-->
 
           <div class="col-lg-4 col-md-6 d-flex justify-content-center px-2">
             <div class="card_flip">
               <div class="front">
-                <img src="assets/img/Reprogramacion-ecu_home.jpeg" alt="Imágen de un dpf">
+                <img src="assets/img/reprogramacion-con-alientech_services.png" alt="Imágen de un dpf">
                 <p class="h4">Reprogramación ECU</p>
               </div>
               <div class="back">
@@ -282,23 +394,6 @@
               </div>
             </div>
           </div>
-
-          <!--div class="col-lg-4 col-md-6 d-flex justify-content-center px-2">
-            <div class="card_flip">
-              <div class="front">
-                <img src="assets/img/Escaner-profesional-psa_home.jpeg" alt="Imágen de un dpf">
-                <h5>Escáner Profesional</h5>
-              </div>
-              <div class="back">
-                <p>En nuestro taller, contamos con equipos de diagnóstico de última generación que nos permite identificar las fallas y datos del funcionamiento del vehículo,
-                  en sistemas de motor y en cualquier módulo del vehículo, como Airbag, ABS, etc.
-                </p>
-                <div class="link_back">
-                  <a href="">Más información</a>
-                </div>
-              </div>
-            </div>
-          </div-->
 
           <div class="col-lg-4 col-md-6 d-flex justify-content-center px-2">
             <div class="card_flip">
@@ -337,133 +432,6 @@
             </div>
           </div>
 
-          <!--div class="col-lg-4 col-md-6 d-flex justify-content-center px-2">
-            <div class="card_flip">
-              <div class="front">
-                <img src="assets/img/Balanceo_home.jpg" alt="Imágen de un dpf">
-                <h5>Balanceo</h5>
-              </div>
-              <div class="back">
-                <p>
-                  Es el proceso de equilibrar el peso de las llantas y los rines para evitar vibraciones al conducir y mejorar la vida útil de los neumáticos
-                </p>
-
-                <ul>
-                  <p class="text-uppercase">Necesitas un balanceo si tu auto presenta:</p>
-                  <li>
-                    <strong>Vibraciones</strong> 
-                  </li>
-                  <li>
-                    <strong>Desgaste irregular del neumático</strong>
-                  </li>
-                  <li>
-                    <strong>Ruidos o Chirridos al conducir</strong>
-                  </li>
-                  <li>
-                    <strong>Desgaste rápido</strong>
-                  </li>
-                  <li>
-                    <strong>Aumento del consumo de combustible</strong>
-                  </li>
-                </ul>
-
-                <div class="link_back">
-                  <a href="pages/balanceo.html">Más información</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex justify-content-center px-2">
-            <div class="card_flip">
-              <div class="front">
-                <img src="assets/img/Mantencion_preventiva_home.jpg" alt="Imágen de un dpf">
-                <h5>Mantención Preventiva</h5>
-              </div>
-              <div class="back">
-                <p>
-                  En nuestro taller mecánico, nos comprometemos a mantener tu vehículo en óptimas condiciones de funcionamiento,
-                  tanto en términos de rendimiento como de seguridad.
-                  ¿Si quieres saber más sobre nuestros servicios de mantención preventiva y correctiva?
-                </p>
-
-                <ul class="align-content-center">
-                  <li>
-                    <strong>Previene fallas mayores</strong> 
-                  </li>
-                  <li>
-                    <strong>Mejora la seguridad</strong>
-                  </li>
-                  <li>
-                    <strong>Prolonga la vida útil</strong>
-                  </li>
-                  <li>
-                    <strong>Ahorra dinero</strong>
-                  </li>
-                  <li>
-                    <strong>Reduce el consumo de combustible</strong>
-                  </li>
-                </ul>
-
-                <div class="link_back">
-                  <a href="pages/mantencion.html">Más información</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex justify-content-center px-2">
-            <div class="card_flip">
-              <div class="front">
-                <img src="assets/img/Manteniemiento_correctiva_home.jpg" alt="Imágen de un dpf">
-                <h5>Mantención Correctiva</h5>
-              </div>
-              <div class="back">
-                <p>
-                  El mantenimiento correctivo que ofrecemos idnetificará las fallas o averías que presenta el vehículo y corregirlas.
-                  Identificamos dos tipos de falla, menores y mayores, que se indicará al cliente, el tiempo de ejecución.
-                  <ul class="align-content-center">
-                    <li>
-                      <strong>Permite que el vehículo vuelva a su estado óptimo de funcionamiento.</strong> 
-                    </li>
-                    <li>
-                      <strong>Corrige problemas existentes en el vehículo.</strong> 
-                    </li>
-                    <li>
-                      <strong>Reduce el riesgo de accidentes.</strong> 
-                    </li>
-                    <li>
-                      <strong>Evita costos mayores en reparaciones a largo plazo.</strong> 
-                    </li>
-                    <li>
-                      <strong>Asegura un mejor rendimiento del vehículo.</strong> 
-                    </li>
-                  </ul>
-                </p>
-                <div class="link_back">
-                  <a href="pages/mantencion.html">Más información</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex justify-content-center px-2">
-            <div class="card_flip">
-              <div class="front">
-                <img src="assets/img/Aire-acondicionado_home.jpg" alt="Imágen de un dpf">
-                <h5>Aire acondicionado</h5>
-              </div>
-              <div class="back">
-                <p>
-                  Si tu vehículo tiene problemas con el aire acondicionado, no dudes en contactarnos.
-                </p>
-                <div class="link_back">
-                  <a href="pages/aire-acondicionado.html">Más información</a>
-                </div>
-              </div>
-            </div>
-          </div-->
-
           <div class="col-lg-4 col-md-6 d-flex justify-content-center px-2">
             <div class="card_flip">
               <div class="front">
@@ -483,50 +451,200 @@
           
         </div>
     </div>    
-</div>
+</div-->
 
-<!---------------------------------------------------------------------TODOS LOS SERVICIOS-->
+<section class="allgarage-services">
+  <div class="services-container">
 
-  <!--div class="nuestros_servicios my-5 p-4 bg-white rounded">
-    <h3 class="text-center display-6 text-uppercase fw-bold mb-3">Nuestros Servicios</h3>
-    <ul class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2 list-unstyled my-5">
-      <li class="col d-flex flex-column align-items-center text-center my-3">
-        <i class="bi bi-tools text-rojo-allgarage fs-2 mb-2"></i>
-        <a href="pages/mantencion" class="h4 text-decoration-none text-dark">Mantención Preventiva</a>
-      </li>
-      <li class="col d-flex flex-column align-items-center text-center my-3">
-        <i class="bi bi-speedometer2 text-rojo-allgarage fs-2 mb-2"></i>
-        <a href="pages/escaner" class="h4 text-decoration-none text-dark">Escáner Profesional</a>
-      </li>
-      <li class="col d-flex flex-column align-items-center text-center my-3">
-        <i class="bi bi-record-circle text-rojo-allgarage fs-2 mb-2"></i>
-        <a href="pages/balanceo" class="h4 text-decoration-none text-dark">Balanceo</a>
-      </li>
-      <li class="col d-flex flex-column align-items-center text-center my-3">
-        <i class="bi bi-car-front-fill text-rojo-allgarage fs-2 mb-2"></i>
-        <a href="pages/aire-acondicionado" class="h4 text-decoration-none text-dark">Aire Acondicionado</a>
-      </li>
-      <li class="col d-flex flex-column align-items-center text-center my-3">
-        <i class="bi bi-list-check text-rojo-allgarage fs-2 mb-2"></i>
-        <a href="pages/servicio-dpf" class="h4 text-decoration-none text-dark">Servicio DPF</a>
-      </li>
-      <li class="col d-flex flex-column align-items-center text-center my-3">
-        <i class="bi bi-chevron-double-right text-rojo-allgarage fs-2 mb-2"></i>
-        <a href="servicios" class="h4 text-decoration-none text-dark">Ver Todos</a>
-      </li>
-    </ul>
-  </div-->
+    <div class="service-panel" style="background-image: url('assets/img/Servicio-DPF_home.jpg');">
+      <div class="overlay">
+        <div class="content-top">
+          <i class="bi bi-filter-circle"></i>
+          <h3>SERVICIO DPF</h3>
+        </div>
+        <div class="content-center">
+          <p>Especialistas</p>
+          <hr>
+          <ul>
+            <li>LIMPIEZA QUÍMICA</li>
+            <li>REGENERACIÓN FORZADA</li>
+            <li>DIAGNÓSTICO DPF</li>
+          </ul>
+        </div>
+        <div class="content-bottom">
+          <span>Ver detalles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-panel" style="background-image: url('assets/img/Alientech_ReprogramacionECU.jpg');">
+      <div class="overlay">
+        <div class="content-top">
+          <i class="bi bi-speedometer2"></i>
+          <h3>REPROGRAMACIÓN ECU</h3>
+        </div>
+        <div class="content-center">
+          <p>Especialistas</p>
+          <hr>
+          <ul>
+            <li>OPTIMIZACIÓN DE POTENCIA</li>
+            <li>AHORRO DE COMBUSTIBLE</li>
+            <li>DESACTIVACIÓN DPF/EGR/ADBLUE</li>
+            <li>DIAGNOÓSTICO AVANZADO DE SENSORES</li>
+          </ul>
+        </div>
+        <div class="content-bottom">
+          <span>Ver detalles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-panel" style="background-image: url('assets/img/Alineacion3D_services.jpg');">
+      <div class="overlay">
+        <div class="content-top">
+          <i class="bi bi-compass"></i>
+          <h3>ALINEACIÓN 3D</h3>
+        </div>
+        <div class="content-center">
+          <p>Tecnología 3D</p>
+          <hr>
+          <ul>
+            <li>PRECISIÓN TOTAL</li>
+            <li>BALANCEO LÁSER</li>
+            <li>REVISIÓN TREN DEL.</li>
+          </ul>
+        </div>
+        <div class="content-bottom">
+          <span>Ver detalles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-panel" style="background-image: url('assets/img/Balanceo_Balanceo.jpg');">
+      <div class="overlay">
+        <div class="content-top">
+          <i class="bi bi-disc"></i>
+          <h3>BALANCEO</h3>
+        </div>
+        <div class="content-center">
+          <p>Tecnología 3D</p>
+          <hr>
+          <ul>
+            <li>BALANCEO COMPUTARIZACION DE ALTA PRECISIÓN</li>
+            <li>ELIMINACIÓN DE VIBRACIONES DE VOLANTE</li>
+            <li>OPTIMIZACIÓN DEL DESGASTE DE NEUMÁTICOS</li>
+            <li>CONTROL DE PLOMOS Y PESAS INTERNAS</li>
+          </ul>
+        </div>
+        <div class="content-bottom">
+          <span>Ver detalles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-panel" style="background-image: url('assets/img/Escaner_Escaner.jpeg');">
+      <div class="overlay">
+        <div class="content-top">
+          <i class="bi bi-cpu"></i>
+          <h3>ESCÁNER PROFESIONAL</h3>
+        </div>
+        <div class="content-center">
+          <p>Diagnóstico Pro</p>
+          <hr>
+          <ul>
+            <li>REPARACIÓN DE PINCHAZOS Y CORTES</li>
+            <li>PARCHES DE ALTA RESISTENCIA TÉRMICA</li>
+            <li>MONTAJE DE DESMONTAJE DE NEUMÁTICOS</li>
+            <li>REVISIÓN DE PRESIÓN Y VÁLVULAS</li>
+          </ul>
+        </div>
+        <div class="content-bottom">
+          <span>Ver detalles</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-panel active" style="background-image: url('assets/img/Mantencion_preventiva_home.jpg');">
+      <div class="overlay">
+        <div class="content-top">
+          <i class="bi bi-tools"></i>
+          <h3>MANTENCIÓN </h3> 
+          <p>PREVENTIVA / CORRECTIVA</p>
+        </div>
+        <div class="content-center">
+          <p>3 Áreas clave</p>
+          <hr>
+          <ul>
+            <li>PREVENTIVA</li>
+            <li>CORRECTIVA</li>
+            <li>CAMBIO DE ACEITE</li>
+          </ul>
+        </div>
+        <div class="content-bottom">
+          <span>Ver detalles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-panel active" style="background-image: url('assets/img/Vulcanizacion_home.jpg');">
+      <div class="overlay">
+        <div class="content-top">
+          <i class="bi bi-capslock-fill"></i>
+          <h3>VULCANIZACIÓN</h3> 
+        </div>
+        <div class="content-center">
+          <p>3 Áreas clave</p>
+          <hr>
+          <ul>
+            <li>PREVENTIVA</li>
+            <li>CORRECTIVA</li>
+            <li>CAMBIO DE ACEITE</li>
+          </ul>
+        </div>
+        <div class="content-bottom">
+          <span>Ver detalles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-panel active" style="background-image: url('assets/img/Aire-acondicionado_home.jpg');">
+      <div class="overlay">
+        <div class="content-top">
+          <i class="bi bi-snow"></i>
+          <h3>AIRE ACONDICIONADO</h3> 
+        </div>
+        <div class="content-center">
+          <p>3 Áreas clave</p>
+          <hr>
+          <ul>
+            <li>RECARGA DE GAS REFRIGERANTE (R134a)</li>
+            <li>DETECCIÓN DE FUGAS CON TRAZADOR UV</li>
+            <li>LIMPIEZA DE DESINFECCIÓN DE DUCTOS</li>
+            <li>CAMBIO DE FILTRO DE POLEN/CABINA</li>
+          </ul>
+        </div>
+        <div class="content-bottom">
+          <span>Ver detalles</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
   
 <!--------------------------------------------------------------------SECTION SMOTH-->
 
 <section class="smoth p-5">
-  <h3 class="text-white text-center display-6 text-uppercase">Nuestros Clientes</h3>
+  <!--h3 class="text-white text-center display-6 text-uppercase">Nuestros Clientes</h3-->
   <div class="container">
       <div class="row">
 
-        <!--script src="https://widget.trustmary.com/ZHcCrwXQQ"></script-->
-        <script defer async src='https://cdn.trustindex.io/loader.js?421b126509c392613f26c0c87be'></script>
-      
+
+        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-7ff37d6c-e221-4085-9e65-291f821af951" data-elfsight-app-lazy></div>
+
       </div>
   </div>
 </section>   
@@ -578,7 +696,7 @@
           </div>
 
           <div class="form-group col-md-12">
-            <button type="submit" class="btn btn-dark btn-block w-100 m-2">Enviar</button>
+            <button type="submit" class="btn-popUp btn w-100 m-2">Enviar</button>
           </div>
 
         </form>  
@@ -661,7 +779,7 @@
 <!-------------------------------------------------------------------------------WHATSAPP-->
 <div id="container">
   <div id="whatsapp">
-    <a href="https://api.whatsapp.com/send?phone=56965808594&text=Hola,%20necesito%20ser%20contactado." rel="noopener" target="_blank">
+    <a href="https://api.whatsapp.com/send?phone=56965808594&text=Hola,%20quiero%20un%20servicio%20en%20Black Friday." rel="noopener" target="_blank">
 
       <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 
@@ -734,6 +852,7 @@
               <a href="https://www.instagram.com/allgarage.cl/" class="bi-instagram m-2" alt="logo instagram" target="_blank" rel="noopener"></a>
               <a href="https://api.whatsapp.com/send?phone=56965808594&text=Hola,%20necesito%20ser%20contactado." rel="noopener" target="_blank" class="bi-whatsapp m-1" alt="logo whatsapp"></a>
             </div>
+
           </div>
     
         </div>

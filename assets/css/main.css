@@ -220,6 +220,82 @@ footer .bi-whatsapp {
 /**/
 /**/
 
+/*********************************************POPUP**************************************/
+.popup-promo {
+            /* IMPORTANTE: Inicialmente display: none, pero usamos 'flex' cuando se muestra con la clase '.show' */
+            display: none;
+            position: fixed;
+            z-index: 1000; /* Z-Index alto para estar sobre el navbar (100) */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Propiedades de Flexbox para centrar el contenido */
+            justify-content: center;
+            align-items: center;
+            /* Efectos visuales de tu código original */
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        /* Clase para mostrar el popup de forma animada */
+        .popup-promo.show {
+            display: flex; /* Esto reemplaza a display: none; */
+            opacity: 1;
+        }
+        /* Clase para ocultar el popup de forma animada */
+        .popup-promo.hide {
+            opacity: 0;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px; /* Usamos 12px por consistencia visual */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #555;
+            transition: color 0.2s ease-in-out;
+            z-index: 1001; /* Aseguramos que esté sobre el contenido del popup */
+        }
+        .close-btn:hover {
+            color: #000;
+        }
+        .popup-content h2 {
+            color: #fdc309;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .popup-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        /* Estilos para los campos de formulario */
+        .popup-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        /* Tu botón ya usa la clase .btn, así que no necesitamos redefinir el estilo del botón aquí */
+
+
 /********************************HERO SECTION*/
 
 .header {
@@ -291,18 +367,135 @@ a:hover p {
 
 /*****************************************DESTACADOS*/
 
-#Destacados {
+/* 1. ESTILOS BASE Y DESKTOP (Horizontal) */
+.allgarage-services {
     width: 100%;
+    height: 750px;
+    overflow: hidden;
+    margin: 40px 0;
+    background-color: #000;
 }
 
-.container-fluid {
-    background-color: #000000;
+.services-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row; /* Asegura que en desktop sea horizontal */
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.service-panel {
+    flex: 1;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* ESTA ES LA CLAVE: La transición debe incluir 'flex' para desktop 
+       y 'height' para cuando cambie en móvil */
+    transition: flex 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                height 0.5s ease; 
+    overflow: hidden;
 }
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.65) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+    color: white;
+    text-align: center;
+}
+
+.overlay:hover {
+    background-color: #000;
+    opacity: 85%;
+}
+
+.content-top i {
+    color: #FDC309;
+    font-size: 32px;
+}
+
+.content-bottom {
+    color: #ffffff;
+    font-size: medium;
+}
+
+.content-bottom:hover {
+    color: #FDC309;
+    font-size: large;
+    font-weight: 500;
+}
+
+/* Contenido oculto por defecto en Desktop */
+.content-center {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* ANIMACIÓN DESKTOP: Solo se activa en pantallas grandes */
+@media (min-width: 992px) {
+    .service-panel:hover {
+        flex: 3; /* Crece horizontalmente */
+    }
+    .service-panel:hover .content-center {
+        opacity: 1;
+        max-height: 400px; /* Muestra la info */
+        margin-top: 20px;
+    }
+}
+
+/* 2. VISTA TABLET Y MÓVIL (Vertical) */
+@media (max-width: 991px) {
+    .allgarage-services {
+        height: auto; /* La sección ya no es fija, depende de las filas */
+    }
+
+    .services-container {
+        flex-direction: column; /* Se apilan en filas */
+    }
+
+    .service-panel {
+        flex: none; /* Desactivamos el crecimiento horizontal */
+        width: 100%;
+        height: 140px; /* Altura de la fila cerrada */
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .overlay {
+        text-align: left; /* Estilo de tu captura de referencia */
+        justify-content: center;
+    }
+
+    /* Estilo de la línea divisoria y la flecha en móvil */
+    .content-bottom {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    /* ESTADO ACTIVO: Cuando haces click en móvil */
+    .service-panel.is-active {
+        height: 400px; /* Crece verticalmente */
+    }
+
+    .service-panel.is-active .content-center {
+        opacity: 1;
+        max-height: 500px;
+        display: block;
+    }
+}
+
 
 /*****************************************CARDS*/
 
