@@ -447,33 +447,33 @@ a:hover p {
 
 /* ANIMACIÓN DESKTOP: Solo se activa en pantallas grandes */
 @media (min-width: 992px) {
-    .service-panel:hover {
-        flex: 1 !important; /* Crece horizontalmente */
+    .service-panel {
+        flex: 1 ; /* Crece horizontalmente */
         height: 100% !important;
     }
     .service-panel:hover{
-        flex: 3 !important;
+        flex: 3;
     }
     .service-panel:hover .content-center {
-        opacity: 1 !important;
-        max-height: 400px !important; /* Muestra la info */
-        margin-top: 20px !important;
+        opacity: 1;
+        max-height: 400px; /* Muestra la info */
+        margin-top: 20px;
     }
     .allgarage-services {
-        height: 750px !important;
+        height: 750px;
     }
     .services-container {
-        flex-direction: row !important;
-        height: 100% !important;
+        flex-direction: row;
+        height: 100%;
     }
 }
 
 /* 2. VISTA TABLET Y MÓVIL (Vertical) */
 @media (max-width: 991.98px) {
     .allgarage-services {
-        height: auto !important; /* La sección ya no es fija, depende de las filas */
-        min-height: 0 !important;
-        overflow: visible !important;
+        height: auto; /* La sección ya no es fija, depende de las filas */
+        min-height: 0;
+        overflow: visible;
     }
 
     .services-container {
@@ -481,21 +481,21 @@ a:hover p {
     }
 
     .service-panel {
-        flex: none !important; /* Desactivamos el crecimiento horizontal */
+        flex: none; /* Desactivamos el crecimiento horizontal */
         width: 100%;
-        height: 140px !important; /* Altura de la fila cerrada */
+        height: 140px; /* Altura de la fila cerrada */
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .service-panel.is-active {
-        height: auto !important;
-        min-height: 420px !important;
+        height: auto;
+        min-height: 420px;
     }
     .service-panel.is-active .content-center{
-        opacity: 1 !important;
-        max-height: none !important;
-        display: block !important;
+        opacity: 1;
+        max-height: none;
+        display: block;
     }
 
     .overlay {
