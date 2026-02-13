@@ -611,20 +611,6 @@ a:hover p {
 }
 
 /******************************************FORM*/
-.btn btn-primary {
-    outline-color: black;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #FDC309;
-    color: black;
-}
-
 input .placeholder {
     color: rgb(223, 221, 221);
 }
@@ -856,7 +842,7 @@ input .placeholder {
 .header_DPF {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/limpieza-dpf_services-dpf.jpeg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.50), rgba(5, 7, 12, 0.75)), url(../img/limpieza-dpf_Home_Header.jpeg);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -924,7 +910,7 @@ input .placeholder {
 .header_Aire {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_aire-acondicionado.jpg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.50), rgba(5, 7, 12, 0.75)), url(../img/aire-acondicionado_Home_Header.jpg);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -992,7 +978,7 @@ input .placeholder {
 .header_Alineacion {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Alineacion_home.jpg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.50), rgba(5, 7, 12, 0.75)), url(../img/Alineacion_Home_Header.jpg);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -1060,7 +1046,7 @@ input .placeholder {
 .header_Balanceo {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Balanceo_services.png);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.50), rgba(5, 7, 12, 0.75)), url(../img/Balanceo_Home_Header.png);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -1128,7 +1114,7 @@ input .placeholder {
 .header_Escaner {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_Escaner.jpeg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.50), rgba(5, 7, 12, 0.75)), url(../img/Escaner_Home_Header.jpeg);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -1196,7 +1182,7 @@ input .placeholder {
 .header_Mantenciones {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_Mantenciones.jpeg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.50), rgba(5, 7, 12, 0.75)), url(../img/Mantencion_Home_Header.jpeg);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -1264,7 +1250,7 @@ input .placeholder {
 .header_ReprogramacionECU {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_Repregramacion-ecu.jpeg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.50), rgba(5, 7, 12, 0.75)), url(../img/Reprogramacion-ecu_Home_Header.jpeg);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -1332,7 +1318,7 @@ input .placeholder {
 .header_Vulcanizacion {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Vulcanizacion_home.jpg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.50), rgba(5, 7, 12, 0.75)), url(../img/Vulcanizacion_Home_Header.jpg);
     opacity: 1;
     height: 900px;
     background-size: cover;
