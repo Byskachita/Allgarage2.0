@@ -856,7 +856,7 @@ input .placeholder {
 .header_DPF {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Limpieza-dpf_Services-dpf.jpg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/limpieza-dpf_services-dpf.jpeg);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -992,7 +992,7 @@ input .placeholder {
 .header_Alineacion {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_Alineacion.JPG);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Alineacion_home.jpg);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -1060,7 +1060,7 @@ input .placeholder {
 .header_Balanceo {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_Balanceo.JPG);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Balanceo_services.png);
     opacity: 1;
     height: 900px;
     background-size: cover;
@@ -1332,7 +1332,7 @@ input .placeholder {
 .header_Vulcanizacion {
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Header_Vulcanizacion.jpg);
+    background-image: linear-gradient(rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.25)), url(../img/Vulcanizacion_home.jpg);
     opacity: 1;
     height: 900px;
     background-size: cover;
