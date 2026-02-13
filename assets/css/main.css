@@ -448,7 +448,7 @@ a:hover p {
 /* ANIMACIÓN DESKTOP: Solo se activa en pantallas grandes */
 @media (min-width: 992px) {
     .service-panel {
-        flex: 1 ; /* Crece horizontalmente */
+        flex: 1; /* Crece horizontalmente */
         height: 100% !important;
     }
     .service-panel:hover{
