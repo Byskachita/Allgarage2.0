@@ -370,7 +370,8 @@ a:hover p {
 /* 1. ESTILOS BASE Y DESKTOP (Horizontal) */
 .allgarage-services {
     width: 100%;
-    height: 750px;
+    min-height: 750px;
+    height: auto;
     overflow: hidden;
     margin: 40px 0;
     background-color: #000;
@@ -454,12 +455,17 @@ a:hover p {
         max-height: 400px; /* Muestra la info */
         margin-top: 20px;
     }
+    .allgarage-services {
+        height: 750px;
+    }
 }
 
 /* 2. VISTA TABLET Y MÓVIL (Vertical) */
 @media (max-width: 991px) {
     .allgarage-services {
         height: auto; /* La sección ya no es fija, depende de las filas */
+        min-height: 0;
+        overflow: visible;
     }
 
     .services-container {
@@ -472,6 +478,11 @@ a:hover p {
         height: 140px; /* Altura de la fila cerrada */
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .service-panel.is-active {
+        height: auto;
+        min-height: 420px;
     }
 
     .overlay {
