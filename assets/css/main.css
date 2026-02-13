@@ -371,7 +371,7 @@ a:hover p {
 .allgarage-services {
     width: 100%;
     min-height: 750px;
-    height: auto;
+    height: 750px;
     overflow: hidden;
     margin: 40px 0;
     background-color: #000;
@@ -448,24 +448,32 @@ a:hover p {
 /* ANIMACIÓN DESKTOP: Solo se activa en pantallas grandes */
 @media (min-width: 992px) {
     .service-panel:hover {
-        flex: 3; /* Crece horizontalmente */
+        flex: 1 !important; /* Crece horizontalmente */
+        height: 100% !important;
+    }
+    .service-panel:hover{
+        flex: 3 !important;
     }
     .service-panel:hover .content-center {
-        opacity: 1;
-        max-height: 400px; /* Muestra la info */
-        margin-top: 20px;
+        opacity: 1 !important;
+        max-height: 400px !important; /* Muestra la info */
+        margin-top: 20px !important;
     }
     .allgarage-services {
-        height: 750px;
+        height: 750px !important;
+    }
+    .services-container {
+        flex-direction: row !important;
+        height: 100% !important;
     }
 }
 
 /* 2. VISTA TABLET Y MÓVIL (Vertical) */
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
     .allgarage-services {
-        height: auto; /* La sección ya no es fija, depende de las filas */
-        min-height: 0;
-        overflow: visible;
+        height: auto !important; /* La sección ya no es fija, depende de las filas */
+        min-height: 0 !important;
+        overflow: visible !important;
     }
 
     .services-container {
@@ -473,16 +481,21 @@ a:hover p {
     }
 
     .service-panel {
-        flex: none; /* Desactivamos el crecimiento horizontal */
+        flex: none !important; /* Desactivamos el crecimiento horizontal */
         width: 100%;
-        height: 140px; /* Altura de la fila cerrada */
+        height: 140px !important; /* Altura de la fila cerrada */
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .service-panel.is-active {
-        height: auto;
-        min-height: 420px;
+        height: auto !important;
+        min-height: 420px !important;
+    }
+    .service-panel.is-active .content-center{
+        opacity: 1 !important;
+        max-height: none !important;
+        display: block !important;
     }
 
     .overlay {
